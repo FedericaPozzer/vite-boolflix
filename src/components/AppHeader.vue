@@ -12,12 +12,6 @@ export default {
     },
 
     components : { SearchBar },
-
-    // created() {
-    //     axios.get(`${store.endpoint}/search/movie?api_key=${store.myKey}`)
-    //     .then((response) => 
-    //     console.log(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=ritorno+al+futuro`))
-    // },
     
     methods : {
         fetchThisTitle(researched) { 
@@ -32,14 +26,6 @@ export default {
                
         }
     },
-
-    // created() {
-    //      axios
-    //         .get("https://api.themoviedb.org/3search/movie?api_key=489399f5d55c1fdfe1322a842bc8b5ed&query=rick")
-    //         .then((response) => {
-    //             console.log(response);
-    //         })
-    // }
 }
 
 </script>
@@ -51,7 +37,6 @@ export default {
         <h1 class="mb-0">HEADER</h1>
 
         <SearchBar @send-data="fetchThisTitle"></SearchBar>
-        <!-- @send-data="fetchThisTitle" -->
 
     </div>
 </template>
@@ -62,6 +47,9 @@ export default {
 
 .header-container {
     height: $header-height;
+    position: fixed;
+    width: 100%;
+
 
     // debug
     background-color: indianred;

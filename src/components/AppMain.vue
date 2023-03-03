@@ -9,8 +9,8 @@ export default {
 
 
 <template>
-    <div class="main-container p-3">
-        <h2>MAIN</h2>
+    <div class="main-container">
+
         <div class="container-fluid">
             <div class="row row-cols-5">
 
@@ -18,6 +18,7 @@ export default {
                 
             </div>
         </div>
+
     </div>
 </template>
 
@@ -26,8 +27,8 @@ export default {
 @use "../scss/partials/variables" as *;
 
 .main-container {
-    height: $main-height;
-
+    padding: 6rem 2rem 2rem 2rem;
+    overflow: scroll;
     // debug
     background-color: pink;
 }
