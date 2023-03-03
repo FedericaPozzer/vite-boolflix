@@ -22,9 +22,13 @@ export default {
     methods : {
         fetchThisTitle(researched) { 
             axios
-            .get(`${store.endpoint}/search/movie?api_key=${store.myKey}`)
+            .get(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=${researched}`)
                 .then((response) =>
-                console.log(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=${researched}`))
+                // console.log(response.data.results)
+
+                store.foundTitles = response.data.results,
+                )
+                
                
         }
     },
