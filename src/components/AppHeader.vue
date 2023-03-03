@@ -13,22 +13,21 @@ export default {
 
     components : { SearchBar },
 
-    created() {
-        axios.get(`${store.endpoint}/search/movie?api_key=${store.myKey}`)
-        .then((response) => 
-        console.log(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=ritorno+al+futuro`))
-    }
+    // created() {
+    //     axios.get(`${store.endpoint}/search/movie?api_key=${store.myKey}`)
+    //     .then((response) => 
+    //     console.log(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=ritorno+al+futuro`))
+    // },
     
-    // methods : {
-    //     fetchThisTitle(researched) { 
-    //         axios
-    //             .get(`https://api.themoviedb.org/3/movie?api_key=489399f5d55c1fdfe1322a842bc8b5ed&query=${researched}`)
-    //             .then((response) => {
-    //                 console.log(response.results.title);
-    //                 // store.researchedTitle = response
-    //             })
-    //     }
-    // } 
+    methods : {
+        fetchThisTitle(researched) { 
+            axios
+            .get(`${store.endpoint}/search/movie?api_key=${store.myKey}`)
+                .then((response) =>
+                console.log(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=${researched}`))
+               
+        }
+    },
 
     // created() {
     //      axios
@@ -47,7 +46,7 @@ export default {
 
         <h1 class="mb-0">HEADER</h1>
 
-        <SearchBar ></SearchBar>
+        <SearchBar @send-data="fetchThisTitle"></SearchBar>
         <!-- @send-data="fetchThisTitle" -->
 
     </div>
