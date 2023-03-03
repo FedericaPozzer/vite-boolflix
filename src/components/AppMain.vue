@@ -4,7 +4,7 @@
 
 
 <template>
-    <div class="main-container">
+    <div class="main-container p-3">
         <h2>MAIN</h2>
 
     </div>

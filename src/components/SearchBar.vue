@@ -6,11 +6,11 @@ export default {
         }
     },
 
-    emits : ["invio-dati"],
+    emits : ["send-data"],
 
     methods : {
         researchedItem() {
-            this.$emit("invio-dati", this.researched);
+            this.$emit("send-data", this.researched);
             console.log("researched " + this.researched);
 
             this.researched = "";
