@@ -13,18 +13,40 @@ export default {
 
     components : { SearchBar },
     
-    methods : {
-        fetchThisTitle(researched) { 
-            axios
-            .get(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=${researched}`)
-                .then((response) =>
-                // console.log(response.data.results)
+    // methods : {
+    //     fetchThisTitle(researched) { 
+    //         axios.all([
+    //             axios.get(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=${researched}`, { pippo: response1 }),
+    //             axios.get(`${store.endpoint}/search/tv?api_key=${store.myKey}&query=${researched}`, { paperino: response2 }),
+    //         ])
 
-                store.foundTitles = response.data.results,
+    //         .then(axios.spread((response1, response2) =>
+    //             response1.data.results = store.foundMoviesTitles,
+    //             response2.data.results = store.foundSeriesTitles    
+    //         ))               
+    //     }
+    // },
+
+     methods: {
+        fetchThisTitle(researched) {
+            axios
+                .get(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=${researched}`)
+                .then((response) =>
+                    // console.log(response.data.results)
+
+                    store.foundMoviesTitles = response.data.results,
                 )
-                
                
-        }
+        },
+
+        // pippo(researched) {
+        //     axios
+        //      .get(`${store.endpoint}/search/tv?api_key=${store.myKey}&query=${researched}`)
+        //     .then((response) =>
+
+        //         store.foundSeriesTitles = response.data.results,
+        //     )
+        // }
     },
 }
 

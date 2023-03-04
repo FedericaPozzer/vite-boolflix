@@ -1,8 +1,8 @@
 <script>
-import SingleCard from "./SingleCard.vue"
+import SingleCardMovies from "./SingleCardMovies.vue"
 
 export default {
-    components : { SingleCard }
+    components : { SingleCardMovies }
 }
 
 </script>
@@ -14,7 +14,15 @@ export default {
         <div class="container-fluid">
             <div class="row row-cols-5">
 
-                <SingleCard></SingleCard>
+                <SingleCardMovies></SingleCardMovies>
+                
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row row-cols-5">
+
+                <!-- <SingleCardSeries></SingleCardSeries> -->
                 
             </div>
         </div>
@@ -31,6 +39,7 @@ export default {
     overflow: scroll;
     // debug
     background-color: pink;
+    min-height: $main-height;
 }
 
 </style>
