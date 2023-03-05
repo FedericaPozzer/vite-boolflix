@@ -13,8 +13,10 @@ export default {
 
 
 <template>
-    <div class="col p-2 db" v-for="item in store.foundMoviesTitles">
-        <div class="poster"></div>
+    <div class="col p-2 db" v-for="item in store.foundTitles" v-show="item.title">
+        <div class="poster">
+            <img src="" alt="poster">
+        </div>
         <div class="info text-center">
             <div class="titolo"> TITOLO: {{ item.title }} </div>
             <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>

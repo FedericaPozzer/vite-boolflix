@@ -13,40 +13,45 @@ export default {
 
     components : { SearchBar },
     
-    // methods : {
-    //     fetchThisTitle(researched) { 
-    //         axios.all([
-    //             axios.get(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=${researched}`, { pippo: response1 }),
-    //             axios.get(`${store.endpoint}/search/tv?api_key=${store.myKey}&query=${researched}`, { paperino: response2 }),
-    //         ])
 
-    //         .then(axios.spread((response1, response2) =>
-    //             response1.data.results = store.foundMoviesTitles,
-    //             response2.data.results = store.foundSeriesTitles    
-    //         ))               
-    //     }
-    // },
-
-     methods: {
+    methods: {
         fetchThisTitle(researched) {
             axios
-                .get(`${store.endpoint}/search/movie?api_key=${store.myKey}&query=${researched}`)
+                .get(`${store.endpoint}/search/multi?api_key=${store.myKey}&query=${researched}`)
                 .then((response) =>
                     // console.log(response.data.results)
 
-                    store.foundMoviesTitles = response.data.results,
-                )
-               
+                    store.foundTitles = response.data.results,
+
+                    // separateTitles(response)
+                      
+
+                //      if (response.data.results.media_type == "movie") {
+                // store.foundMoviesTitles = response.data.results,
+
+                //     } else if (response.data.results.media_type == "tv") {
+                // store.foundMoviesTitles = response.data.results,
+                //     }
+                   
+                )    
+
+            
+            // FLAGS    
+            // axios 
+            //     .get(`https://countryflagsapi.com/:png/:${flag}`)
         },
 
-        // pippo(researched) {
-        //     axios
-        //      .get(`${store.endpoint}/search/tv?api_key=${store.myKey}&query=${researched}`)
-        //     .then((response) =>
+        // separateTitles(response) {
 
-        //         store.foundSeriesTitles = response.data.results,
-        //     )
+        //     if (this.response.data.results.media_type == "movie") {
+        //         store.foundMoviesTitles = this.response.data.results
+        //     } else if (this.response.data.results.media_type == "tv") {
+        //         store.foundSeriesTitles = this.response.data.results
+        //     }
+            
         // }
+
+       
     },
 }
 
