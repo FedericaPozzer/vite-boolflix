@@ -16,7 +16,7 @@ export default {
 
     <div class="col p-2 db" v-for="item in store.foundTitles" v-show="item.title">
         <div class="poster">
-            <img src="" alt="poster">
+            <img :src="`${store.imgEndpoint}${item.poster_path}`" alt="poster">
         </div>
         <div class="info text-center" v-show="item.media_type == 'movie'">
             <div class="titolo"> TITOLO: {{ item.title }} </div>

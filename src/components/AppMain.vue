@@ -13,6 +13,7 @@ export default {
     <div class="main-container">
 
         <div class="container-fluid">
+            <h3>MOVIES</h3>
             <div class="row row-cols-5">
 
                 <SingleCardMovies></SingleCardMovies>
@@ -20,7 +21,8 @@ export default {
             </div>
         </div>
 
-        <div class="container-fluid">
+        <div class="container-fluid mt-5">
+            <h3>TV SERIES</h3>
             <div class="row row-cols-5">
 
                 <SingleCardSeries></SingleCardSeries>

@@ -22,35 +22,8 @@ export default {
                     // console.log(response.data.results)
 
                     store.foundTitles = response.data.results,
-
-                    // separateTitles(response)
-                      
-
-                //      if (response.data.results.media_type == "movie") {
-                // store.foundMoviesTitles = response.data.results,
-
-                //     } else if (response.data.results.media_type == "tv") {
-                // store.foundMoviesTitles = response.data.results,
-                //     }
-                   
                 )    
-
-            
-            // FLAGS    
-            // axios 
-            //     .get(`https://countryflagsapi.com/:png/:${flag}`)
         },
-
-        // separateTitles(response) {
-
-        //     if (this.response.data.results.media_type == "movie") {
-        //         store.foundMoviesTitles = this.response.data.results
-        //     } else if (this.response.data.results.media_type == "tv") {
-        //         store.foundSeriesTitles = this.response.data.results
-        //     }
-            
-        // }
-
        
     },
 }
