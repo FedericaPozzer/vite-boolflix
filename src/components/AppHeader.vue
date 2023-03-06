@@ -34,7 +34,9 @@ export default {
 <template>
     <div class="header-container px-3 d-flex align-items-center justify-content-between">
 
-        <h1 class="mb-0">HEADER</h1>
+        <h1 class="mb-0">HEADER
+            <font-awesome-icon icon="fa-solid fa-kiwi-bird" />
+        </h1>
 
         <SearchBar @send-data="fetchThisTitle"></SearchBar>
 

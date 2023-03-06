@@ -7,6 +7,15 @@ export default {
             store,
         }
     },
+
+    methods: {
+        getFlag(country) {
+            if (country) return `${store.flagsEndpoint}${country}/shiny/64.png`;
+
+            // return `https://url/to/${conuntry}/flag`;
+        }
+    },
+
 }
 
 </script>
@@ -22,6 +31,10 @@ export default {
             <div class="titolo"> TITOLO: {{ item.title }} </div>
             <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
             <div class="lingua"> LINGUA: {{ item.original_language }} </div>
+            <div class="flag"> 
+                <!-- TODO: make this work -->
+                <img :src="getFlag(item.original_language)" alt="flag">
+            </div>
             <div class="voto"> VOTO: {{ item.vote_average }} </div>
             <div class="text-primary"> DEBUG : {{ item.media_type }}</div>
         </div>
@@ -35,7 +48,6 @@ export default {
 
 .db {
     border: 1px dashed black;
-
     // height: 20rem
 }
 
@@ -53,6 +65,11 @@ export default {
         background-color: rgb(23, 22, 22);
         color: #ffffff;
         height: 100%;
+
+        // .flag img {
+        //    height: 50px;
+        //    width: 50px; 
+        // }
     }
 }
 
