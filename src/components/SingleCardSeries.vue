@@ -7,6 +7,19 @@ export default {
             store,
         }
     },
+
+    methods : {
+        getFlag(country) {
+            if (country) return `${store.flagsEndpoint}${country}/shiny/64.png`;
+
+            // return `https://url/to/${conuntry}/flag`;
+        },
+
+
+         transformVote(vote) {
+            return parseInt(vote / 2)
+        },
+    }
 }
 
 </script>
@@ -23,12 +36,11 @@ export default {
             <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
             <div class="lingua"> LINGUA: {{ item.original_language }} </div>
             <div class="voto"> VOTO: {{ item.vote_average }} </div>
-            <div>
-                <font-awesome-icon icon="fa-solid fa-star" />
-                <font-awesome-icon icon="fa-solid fa-star" />
-                <font-awesome-icon icon="fa-solid fa-star" />
-                <font-awesome-icon icon="fa-solid fa-star" />
-                <font-awesome-icon icon="fa-solid fa-star" />
+             <div class="d-flex justify-content-center">
+                <div v-for="numero in 5" :key="numero">
+                    <font-awesome-icon v-if="numero <= transformVote(item.vote_average)" icon="fa-solid fa-star"/>
+                    <font-awesome-icon v-if="numero > transformVote(item.vote_average)" icon="fa-regular fa-star"/>
+                </div>
             </div>
             <div class="text-primary"> DEBUG : {{ item.media_type }}</div>
         </div>

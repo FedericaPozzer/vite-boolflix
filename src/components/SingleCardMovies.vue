@@ -19,13 +19,7 @@ export default {
             return parseInt(vote / 2)
         },
 
-        // printStars(number) {
-        //     if (number == 3) return '<font-awesome-icon icon="fa-solid fa-star" />'
-        // }
 
-
-        // <font-awesome-icon icon="fa-solid fa-star" />
-        // <font-awesome-icon icon="fa-regular fa-star" />
     },
 
 }
@@ -47,24 +41,13 @@ export default {
                 <!-- TODO: make this work -->
                 <img :src="getFlag(item.original_language)" alt="flag">
             </div>
-            <div class="voto"> VOTO: {{ item.vote_average }} </div>
-
-            <!-- TODO: stampare le stelle -->
-            <div> voto dimezzato parsato: {{ transformVote(item.vote_average) }} </div>
-            <div>
-                STELLE: 
-                <!-- :bind="printStars(transformVote(item.vote_average))" no lol -->
-                <!-- {{ printStars(transformVote(item.vote_average)) }} no lol -->
-
-                <div v-show="transformVote(item.vote_average)">
-                    <font-awesome-icon icon="fa-solid fa-star"/>
+            <!-- <div class="voto"> VOTO: {{ item.vote_average }} </div> -->
+            <!-- <div> voto dimezzato parsato: {{ transformVote(item.vote_average) }} </div> -->
+            <div class="d-flex justify-content-center">
+                <div v-for="numero in 5" :key="numero">
+                    <font-awesome-icon v-if="numero <= transformVote(item.vote_average)" icon="fa-solid fa-star"/>
+                    <font-awesome-icon v-if="numero > transformVote(item.vote_average)" icon="fa-regular fa-star"/>
                 </div>
-
-
-
-                <!-- <font-awesome-icon icon="fa-solid fa-star" />
-                <font-awesome-icon icon="fa-regular fa-star" /> -->
-                
             </div>
             <div class="text-primary"> DEBUG : {{ item.media_type }}</div>
         </div>
