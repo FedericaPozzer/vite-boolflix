@@ -56,7 +56,7 @@ export default {
                     <font-awesome-icon v-if="numero > transformVote(item.vote_average)" icon="fa-regular fa-star"/>
                 </div>
             </div>
-            <div class="text-primary"> DEBUG : {{ item.media_type }}</div>
+            <!-- <div class="text-primary"> DEBUG : {{ item.media_type }}</div> -->
         </div>
     </div>
 
@@ -67,9 +67,9 @@ export default {
 @use "../scss/style.scss" as *;
 @use "../scss/partials/variables" as *;
 
-.db {
-    border: 1px dashed black;
-}
+// .db {
+//     border: 1px dashed black;
+// }
 
 .col {
     height: 30rem;
