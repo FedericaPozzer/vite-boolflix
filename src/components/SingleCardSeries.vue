@@ -23,6 +23,13 @@ export default {
             <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
             <div class="lingua"> LINGUA: {{ item.original_language }} </div>
             <div class="voto"> VOTO: {{ item.vote_average }} </div>
+            <div>
+                <font-awesome-icon icon="fa-solid fa-star" />
+                <font-awesome-icon icon="fa-solid fa-star" />
+                <font-awesome-icon icon="fa-solid fa-star" />
+                <font-awesome-icon icon="fa-solid fa-star" />
+                <font-awesome-icon icon="fa-solid fa-star" />
+            </div>
             <div class="text-primary"> DEBUG : {{ item.media_type }}</div>
         </div>
     </div>

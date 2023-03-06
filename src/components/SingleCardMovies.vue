@@ -13,7 +13,19 @@ export default {
             if (country) return `${store.flagsEndpoint}${country}/shiny/64.png`;
 
             // return `https://url/to/${conuntry}/flag`;
-        }
+        },
+
+        transformVote(vote) {
+            return parseInt(vote / 2)
+        },
+
+        // printStars(number) {
+        //     if (number == 3) return '<font-awesome-icon icon="fa-solid fa-star" />'
+        // }
+
+
+        // <font-awesome-icon icon="fa-solid fa-star" />
+        // <font-awesome-icon icon="fa-regular fa-star" />
     },
 
 }
@@ -36,6 +48,24 @@ export default {
                 <img :src="getFlag(item.original_language)" alt="flag">
             </div>
             <div class="voto"> VOTO: {{ item.vote_average }} </div>
+
+            <!-- TODO: stampare le stelle -->
+            <div> voto dimezzato parsato: {{ transformVote(item.vote_average) }} </div>
+            <div>
+                STELLE: 
+                <!-- :bind="printStars(transformVote(item.vote_average))" no lol -->
+                <!-- {{ printStars(transformVote(item.vote_average)) }} no lol -->
+
+                <div v-show="transformVote(item.vote_average)">
+                    <font-awesome-icon icon="fa-solid fa-star"/>
+                </div>
+
+
+
+                <!-- <font-awesome-icon icon="fa-solid fa-star" />
+                <font-awesome-icon icon="fa-regular fa-star" /> -->
+                
+            </div>
             <div class="text-primary"> DEBUG : {{ item.media_type }}</div>
         </div>
     </div>

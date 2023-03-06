@@ -11,14 +11,11 @@ import App from './App.vue'
     // packages
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
     // single icons
-    import { faKiwiBird } from '@fortawesome/free-solid-svg-icons'
+    import { faKiwiBird, faStar as SolidStar } from '@fortawesome/free-solid-svg-icons'
+    import { faStar as RegularStar } from '@fortawesome/free-regular-svg-icons'
 
-    library.add(faKiwiBird);
+    library.add(faKiwiBird, SolidStar, RegularStar);
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.mount('#app')
-
-
-
-    // < i class="fa-solid fa-kiwi-bird" ></i >
