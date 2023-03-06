@@ -5,9 +5,9 @@ export const store = reactive({
 
     foundTitles : [], //all
 
-    foundMoviesTitles : [], //movies
+    // foundMoviesTitles : [], //movies
 
-    foundSeriesTitles : [], //series
+    // foundSeriesTitles : [], //series
 
     endpoint : "https://api.themoviedb.org/3",
 

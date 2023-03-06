@@ -1,8 +1,9 @@
 <script>
 import SingleCardMovies from "./SingleCardMovies.vue"
+import SingleCardSeries from "./SingleCardSeries.vue"
 
 export default {
-    components : { SingleCardMovies }
+    components : { SingleCardMovies, SingleCardSeries }
 }
 
 </script>
@@ -22,7 +23,7 @@ export default {
         <div class="container-fluid">
             <div class="row row-cols-5">
 
-                <!-- <SingleCardSeries></SingleCardSeries> -->
+                <SingleCardSeries></SingleCardSeries>
                 
             </div>
         </div>
