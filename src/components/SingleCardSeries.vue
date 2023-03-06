@@ -67,16 +67,16 @@ export default {
 
 .db {
     border: 1px dashed black;
-    // height: 20rem
 }
 
 .col {
-    overflow: scroll;
-    
+    height: 30rem;
+
     .poster {
 
         img {
-            max-width: 100%;
+            width: 100%;
+            height: 29rem;
             border: $border-white;
         }
     }
