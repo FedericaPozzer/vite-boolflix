@@ -1,0 +1,12 @@
+// HOVER POSTER/INFO - (used in SingleCardMovies and SingleCardSeries
+.info {
+    display: none;
+}
+
+.col:hover .info {
+    display: block;
+}
+
+.col:hover .poster {
+    display: none;
+}
