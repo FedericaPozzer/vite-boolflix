@@ -11,8 +11,11 @@ export default {
     methods : {
         getFlag(country) {
             if (country) return `${store.flagsEndpoint}${country}/shiny/64.png`;
+        },
 
-            // return `https://url/to/${conuntry}/flag`;
+
+         backupFlag(sigla) {
+            if (sigla) return `/backup-flags/${sigla}.png`
         },
 
 
@@ -34,9 +37,18 @@ export default {
         <div class="info p-3 text-center" v-show="item.media_type == 'tv'">
             <div class="titolo"> TITOLO: {{ item.name }} </div>
             <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
+            <!-- flag -->
             <div class="lingua"> LINGUA: {{ item.original_language }} </div>
-            <div class="voto"> VOTO: {{ item.vote_average }} </div>
-             <div class="d-flex justify-content-center">
+            <div class="flag"> 
+                <!-- TODO: not working, so.. -->
+                <img :src="getFlag(item.original_language)" alt="flag">
+            </div>
+                <!-- TODO: habemus backup flags! -->
+            <div class="backup-flag">
+                <img :src="backupFlag(item.original_language)" alt="backup-flag">
+            </div>
+            <!-- stars -->
+            <div class="d-flex justify-content-center">
                 <div v-for="numero in 5" :key="numero">
                     <font-awesome-icon v-if="numero <= transformVote(item.vote_average)" icon="fa-solid fa-star"/>
                     <font-awesome-icon v-if="numero > transformVote(item.vote_average)" icon="fa-regular fa-star"/>
@@ -74,6 +86,10 @@ export default {
         color: #ffffff;
         height: 100%;
         border: $border-white;
+
+        .backup-flag img {
+           width: 70px;
+        }
     }
 }
 </style>

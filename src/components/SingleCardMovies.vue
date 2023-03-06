@@ -10,15 +10,18 @@ export default {
 
     methods: {
         getFlag(country) {
-            if (country) return `${store.flagsEndpoint}${country}/shiny/64.png`;
-
-            // return `https://url/to/${conuntry}/flag`;
+            if (country) return `${store.flagsEndpoint}${country}`;
         },
+
+
+        backupFlag(sigla) {
+            if (sigla) return `/backup-flags/${sigla}.png`
+        },
+
 
         transformVote(vote) {
             return parseInt(vote / 2)
         },
-
 
     },
 
@@ -36,13 +39,17 @@ export default {
         <div class="info p-3 text-center" v-show="item.media_type == 'movie'">
             <div class="titolo"> TITOLO: {{ item.title }} </div>
             <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
+            <!-- flag -->
             <div class="lingua"> LINGUA: {{ item.original_language }} </div>
             <div class="flag"> 
-                <!-- TODO: make this work -->
+                <!-- TODO: not working, so.. -->
                 <img :src="getFlag(item.original_language)" alt="flag">
             </div>
-            <!-- <div class="voto"> VOTO: {{ item.vote_average }} </div> -->
-            <!-- <div> voto dimezzato parsato: {{ transformVote(item.vote_average) }} </div> -->
+                <!-- TODO: habemus backup flags! -->
+            <div class="backup-flag">
+                <img :src="backupFlag(item.original_language)" alt="backup-flag">
+            </div>
+            <!-- stars -->
             <div class="d-flex justify-content-center">
                 <div v-for="numero in 5" :key="numero">
                     <font-awesome-icon v-if="numero <= transformVote(item.vote_average)" icon="fa-solid fa-star"/>
@@ -82,10 +89,9 @@ export default {
         height: 100%;
         border: $border-white;
 
-        // .flag img {
-        //    height: 50px;
-        //    width: 50px; 
-        // }
+        .backup-flag img {
+           width: 70px;
+        }
     }
 }
 

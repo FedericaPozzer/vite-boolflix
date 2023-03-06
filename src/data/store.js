@@ -11,11 +11,6 @@ export const store = reactive({
 
     imgEndpoint: "https://image.tmdb.org/t/p/w342",
 
-    flagsEndpoint: "https://flagsapi.com/"
-
-   // ”https://countryflagsapi.com/png/no"
-    // use origin_country
-
-    // : country_code / shiny / 64
+    flagsEndpoint: "https://countryflagsapi.com/png/",
 
 });
