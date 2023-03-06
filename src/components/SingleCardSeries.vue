@@ -39,6 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "../scss/style.scss" as *;
+@use "../scss/partials/variables" as *;
 
 .db {
     border: 1px dashed black;
@@ -52,6 +53,7 @@ export default {
 
         img {
             max-width: 100%;
+            border: $border-white;
         }
     }
 
@@ -59,6 +61,7 @@ export default {
         background-color: rgb(23, 22, 22);
         color: #ffffff;
         height: 100%;
+        border: $border-white;
     }
 }
 </style>

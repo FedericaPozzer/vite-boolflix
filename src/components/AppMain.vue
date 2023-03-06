@@ -46,9 +46,12 @@ export default {
 .main-container {
     padding: 6rem 2rem 2rem 2rem;
     overflow: scroll;
-    // debug
-    background-color: pink;
+    background-color: #434343;
     min-height: $main-height;
+
+    h3 {
+        color: #ffffff;
+    }
 }
 
 </style>
