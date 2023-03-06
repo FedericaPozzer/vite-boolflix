@@ -7,16 +7,16 @@ import App from './App.vue'
 
 // FONTAWESOME
     // core
-    import { library } from "@fortawesome/fontawesome-svg-core"
+    import { library } from '@fortawesome/fontawesome-svg-core' 
     // packages
-    import { fontAwesomeIcon } from "@fortawesome/vue-fontawesome"
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
     // single icons
-    import { faKiwiBird } from "@fortawesome/free-solid-svg-icons"
+    import { faKiwiBird } from '@fortawesome/free-solid-svg-icons'
 
     library.add(faKiwiBird);
 
 const app = createApp(App);
-app.component("font-awesome-icon", fontAwesomeIcon);
+app.component("font-awesome-icon", FontAwesomeIcon);
 app.mount('#app')
 
 
