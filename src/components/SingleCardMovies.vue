@@ -40,18 +40,20 @@ export default {
             </div>
 
             <div class="info back p-3 text-center" v-show="item.media_type == 'movie'">
-                <div class="titolo"> TITOLO: {{ item.title }} </div>
+                <div class="titolo my-2"> TITOLO: {{ item.title }} </div>
                 <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
+                
                 <!-- flag -->
-                <div class="lingua"> LINGUA: {{ item.original_language }} </div>
-                <div class="flag"> 
+                <!-- <div class="lingua"> LINGUA: {{ item.original_language }} </div> -->
+                <div class="flag my-3"> 
                     <!-- TODO: not working, so.. -->
-                    <img :src="getFlag(item.original_language)" alt="flag">
+                    <img :src="getFlag(item.original_language)" alt="">
+                        <!-- TODO: habemus backup flags! -->
+                    <div class="backup-flag">
+                        <img :src="backupFlag(item.original_language)" alt="backup-flag">
+                    </div>
                 </div>
-                    <!-- TODO: habemus backup flags! -->
-                <div class="backup-flag">
-                    <img :src="backupFlag(item.original_language)" alt="backup-flag">
-                </div>
+                
                 <!-- stars -->
                 <div class="d-flex justify-content-center">
                     <div v-for="numero in 5" :key="numero">
