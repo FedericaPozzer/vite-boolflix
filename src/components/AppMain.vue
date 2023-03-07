@@ -2,9 +2,6 @@
 import SingleCardMovies from "./SingleCardMovies.vue"
 import SingleCardSeries from "./SingleCardSeries.vue"
 
-// import axios from "axios"
-import { store } from "../data/store"
-
 export default {
     components : { SingleCardMovies, SingleCardSeries },
 
