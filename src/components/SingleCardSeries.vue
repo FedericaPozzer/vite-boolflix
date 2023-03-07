@@ -80,6 +80,7 @@ export default {
 
 .col {
     height: 30rem;
+    overflow: hidden;
 
     .poster {
 
@@ -101,7 +102,7 @@ export default {
         }
 
         .overview {
-            height: 100%;
+            height: 90%;
             margin-top: auto;
 
 
