@@ -36,7 +36,7 @@ export default {
                 <img :src="`${store.imgEndpoint}${item.poster_path}`" alt="poster">
             </div>
             <div class="info back p-3 text-center" v-show="item.media_type == 'tv'">
-                <div class="titolo my-2"> TITOLO: {{ item.name }} </div>
+                <div class="titolo my-2"> TITOLO: <b class="fs-5">{{ item.name }}</b> </div>
                 <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
 
                 <!-- flag -->
@@ -51,11 +51,16 @@ export default {
                 </div>
                 
                 <!-- stars -->
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mb-4">
                     <div v-for="numero in 5" :key="numero">
                         <font-awesome-icon v-if="numero <= transformVote(item.vote_average)" icon="fa-solid fa-star"/>
                         <font-awesome-icon v-if="numero > transformVote(item.vote_average)" icon="fa-regular fa-star"/>
                     </div>
+                </div>
+
+                <!-- overview -->
+                <div class="overview d-flex">
+                    <div class="overview-text"> {{ item.overview }} </div>
                 </div>
                 <!-- <div class="text-primary"> DEBUG : {{ item.media_type }}</div> -->
             </div>
@@ -93,6 +98,17 @@ export default {
 
         .backup-flag img {
            width: 70px;
+        }
+
+        .overview {
+            height: 100%;
+            margin-top: auto;
+
+
+            .overview-text {
+                height: 40%;
+                overflow: scroll;
+            }
         }
     }
 }
