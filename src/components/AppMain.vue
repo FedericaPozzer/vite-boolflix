@@ -48,7 +48,7 @@ export default {
     padding: 6rem 2rem 2rem 2rem;
     overflow: scroll;
     background-color: #434343;
-    min-height: $main-height;
+    // min-height: $main-height;
 
 
     h3 {
