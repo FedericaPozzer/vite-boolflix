@@ -1,12 +1,46 @@
-// HOVER POSTER/INFO - (used in SingleCardMovies and SingleCardSeries
-.info {
-    display: none;
+// HOVER POSTER/INFO - (used in SingleCardMovies and SingleCardSeries)
+// .info {
+//     display: none;
+// }
+
+// .col:hover .info {
+//     display: block;
+// }
+
+// .col:hover .poster {
+//     display: none;
+// }
+
+
+
+// HOVER POSTER/INFO -- flippin' card!
+.flip-container {
+
+    .flip-card {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        transition: transform 1500ms;
+        transform-style: preserve-3d;
+
+        .back,
+        .front {
+            height: 100%;
+            width: 100%;
+            box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+
+    }
 }
 
-.col:hover .info {
-    display: block;
-}
-
-.col:hover .poster {
-    display: none;
+.flip-container:hover .flip-card {
+    cursor: pointer;
+    transform: rotateY(180deg);
 }

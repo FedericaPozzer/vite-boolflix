@@ -30,31 +30,33 @@ export default {
 
 <template>
 
-    <div class="col p-2 db" v-for="item in store.foundTitles" v-show="item.name && item.poster_path">
-        <div class="poster">
-            <img :src="`${store.imgEndpoint}${item.poster_path}`" alt="poster">
-        </div>
-        <div class="info p-3 text-center" v-show="item.media_type == 'tv'">
-            <div class="titolo"> TITOLO: {{ item.name }} </div>
-            <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
-            <!-- flag -->
-            <div class="lingua"> LINGUA: {{ item.original_language }} </div>
-            <div class="flag"> 
-                <!-- TODO: not working, so.. -->
-                <img :src="getFlag(item.original_language)" alt="flag">
+    <div class="col p-2 flip-container db" v-for="item in store.foundTitles" v-show="item.name && item.poster_path">
+        <div class="flip-card">
+            <div class="poster front">
+                <img :src="`${store.imgEndpoint}${item.poster_path}`" alt="poster">
             </div>
-                <!-- TODO: habemus backup flags! -->
-            <div class="backup-flag">
-                <img :src="backupFlag(item.original_language)" alt="backup-flag">
-            </div>
-            <!-- stars -->
-            <div class="d-flex justify-content-center">
-                <div v-for="numero in 5" :key="numero">
-                    <font-awesome-icon v-if="numero <= transformVote(item.vote_average)" icon="fa-solid fa-star"/>
-                    <font-awesome-icon v-if="numero > transformVote(item.vote_average)" icon="fa-regular fa-star"/>
+            <div class="info back p-3 text-center" v-show="item.media_type == 'tv'">
+                <div class="titolo"> TITOLO: {{ item.name }} </div>
+                <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
+                <!-- flag -->
+                <div class="lingua"> LINGUA: {{ item.original_language }} </div>
+                <div class="flag"> 
+                    <!-- TODO: not working, so.. -->
+                    <img :src="getFlag(item.original_language)" alt="flag">
                 </div>
+                    <!-- TODO: habemus backup flags! -->
+                <div class="backup-flag">
+                    <img :src="backupFlag(item.original_language)" alt="backup-flag">
+                </div>
+                <!-- stars -->
+                <div class="d-flex justify-content-center">
+                    <div v-for="numero in 5" :key="numero">
+                        <font-awesome-icon v-if="numero <= transformVote(item.vote_average)" icon="fa-solid fa-star"/>
+                        <font-awesome-icon v-if="numero > transformVote(item.vote_average)" icon="fa-regular fa-star"/>
+                    </div>
+                </div>
+                <!-- <div class="text-primary"> DEBUG : {{ item.media_type }}</div> -->
             </div>
-            <!-- <div class="text-primary"> DEBUG : {{ item.media_type }}</div> -->
         </div>
     </div>
 

@@ -55,6 +55,7 @@ export default {
     position: fixed;
     width: 100%;
     background-color: #000000;
+    z-index: 1;
 
     .logo-netflix {
         height: $header-height;
