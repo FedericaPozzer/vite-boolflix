@@ -1,4 +1,8 @@
-<script>
+<!-- ! tengo le cards separate.. per ricordo :D -->
+
+
+
+<!-- <script>
 import { store } from "../data/store"
 
 export default {
@@ -43,18 +47,13 @@ export default {
                 <div class="titolo my-2"> TITOLO: <b class="fs-5">{{ item.title }}</b> </div>
                 <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
                 
-                <!-- flag -->
-                <!-- <div class="lingua"> LINGUA: {{ item.original_language }} </div> -->
                 <div class="flag my-3"> 
-                    <!-- TODO: not working, so.. -->
                     <img :src="getFlag(item.original_language)" alt="">
-                        <!-- TODO: habemus backup flags! -->
                     <div class="backup-flag">
                         <img :src="backupFlag(item.original_language)" alt="backup-flag">
                     </div>
                 </div>
                 
-                <!-- stars -->
                 <div class="d-flex justify-content-center mb-4">
                     <div v-for="numero in 5" :key="numero">
                         <font-awesome-icon v-if="numero <= transformVote(item.vote_average)" icon="fa-solid fa-star"/>
@@ -62,11 +61,9 @@ export default {
                     </div>
                 </div>
                 
-                <!-- overview -->
                 <div class="overview">
                     <div> {{ item.overview }} </div>
                 </div>
-                <!-- <div class="text-primary"> DEBUG : {{ item.media_type }}</div> -->
             </div>
 
         </div>
@@ -79,9 +76,6 @@ export default {
 @use "../scss/style.scss" as *;
 @use "../scss/partials/variables" as *;
 
-// .db {
-//     border: 1px dashed black;
-// }
 
 .col {
     height: 30rem;
@@ -112,4 +106,4 @@ export default {
     }
 }
 
-</style>
+</style> -->

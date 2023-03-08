@@ -1,12 +1,16 @@
 <script>
-import SingleCardMovies from "./SingleCardMovies.vue"
-import SingleCardSeries from "./SingleCardSeries.vue"
+import SingleCard from "./SingleCard.vue"
+
+import { store } from "../data/store"
 
 export default {
-    components : { SingleCardMovies, SingleCardSeries },
+     data() {
+        return {
+            store,
+        }
+    },
 
-
-  
+    components : { SingleCard },
 }
 
 </script>
@@ -20,7 +24,18 @@ export default {
 
                 <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
 
-                    <SingleCardMovies></SingleCardMovies>
+                    <SingleCard
+                    v-for="movie in store.foundTitles"
+                    :title="movie.title"
+                    :originalTitle="movie.original_title"
+                    :lang="movie.original_language"
+                    :vote="movie.vote_average"
+                    :overview="movie.overview"
+                    :poster="movie.poster_path"
+                    :media="movie.media_type"                   
+
+                    v-show= "movie.title && movie.poster_path"
+                    ></SingleCard>
                 
                 </div>
             
@@ -31,7 +46,18 @@ export default {
 
                 <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
 
-                    <SingleCardSeries></SingleCardSeries>
+                    <SingleCard
+                    v-for="serie in store.foundTitles"
+                    :title="serie.name"
+                    :originalTitle="serie.original_name"
+                    :lang="serie.original_language"
+                    :vote="serie.vote_average"
+                    :overview="serie.overview"
+                    :poster="serie.poster_path"
+                    :media="serie.media_type"
+
+                    v-show= "serie.name && serie.poster_path"
+                    ></SingleCard>
                 
                 </div>
             
