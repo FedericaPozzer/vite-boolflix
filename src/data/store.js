@@ -13,4 +13,8 @@ export const store = reactive({
 
     flagsEndpoint: "https://countryflagsapi.com/png/",
 
+    tryEndpoint: "https://flagcdn.com/64x48/",
+
+
+
 });

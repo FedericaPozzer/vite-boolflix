@@ -1,5 +1,4 @@
 <script>
-import { stringifyExpression } from "@vue/compiler-core";
 import { store } from "../data/store"
 
 export default {
@@ -11,12 +10,10 @@ export default {
 
     methods: {
         getFlag(country) {
-            if (country) return `${store.flagsEndpoint}${country}`;
-        },
+            if (country != "en" && country != "ja") return `${store.tryEndpoint}${country}.png`;
 
-
-        backupFlag(sigla) {
-            if (sigla) return `/backup-flags/${sigla}.png`
+            if (country == "en") return `../../public/backup-flags/${country}.png`; 
+            if (country == "ja") return `../../public/backup-flags/${country}.png`;
         },
 
 
@@ -54,14 +51,8 @@ export default {
                 <div class="titolo-originale"> TITOLO ORIGINALE: {{ originalTitle }} </div>
 
                 <!-- flag -->
-                <!-- <div class="lingua"> LINGUA: {{ item.original_language }} </div> -->
                 <div class="flag my-3">
-                    <!-- TODO: not working, so.. -->
-                    <img :src="getFlag( lang )" alt="">
-                    <!-- TODO: habemus backup flags! -->
-                    <div class="backup-flag">
-                        <img :src="backupFlag( lang )" alt="backup-flag">
-                    </div>
+                    <img :src="getFlag( lang )" alt="flag">
                 </div>
 
                 <!-- stars -->
@@ -76,7 +67,6 @@ export default {
                 <div class="overview">
                     <div> {{ overview }} </div>
                 </div>
-                <!-- <div class="text-primary"> DEBUG : {{ item.media_type }}</div> -->
             </div>
 
         </div>
@@ -108,10 +98,10 @@ export default {
         height: 100%;
         border: $border-white;
 
-        .backup-flag img {
-            width: 70px;
+        .flag img {
+            height: 48px;
+            width: 64px;
         }
-
 
         .overview {
             overflow: scroll;
