@@ -35,7 +35,7 @@ export default {
             <div class="poster front">
                 <img :src="`${store.imgEndpoint}${item.poster_path}`" alt="poster">
             </div>
-            <div class="info back p-3 text-center" v-show="item.media_type == 'tv'">
+            <div class="info back p-3 text-center d-flex flex-column" v-show="item.media_type == 'tv'">
                 <div class="titolo my-2"> TITOLO: <b class="fs-5">{{ item.name }}</b> </div>
                 <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
 
@@ -59,8 +59,8 @@ export default {
                 </div>
 
                 <!-- overview -->
-                <div class="overview d-flex">
-                    <div class="overview-text"> {{ item.overview }} </div>
+                <div class="overview">
+                    <div> {{ item.overview }} </div>
                 </div>
                 <!-- <div class="text-primary"> DEBUG : {{ item.media_type }}</div> -->
             </div>
@@ -102,14 +102,9 @@ export default {
         }
 
         .overview {
-            height: 90%;
+            height: 7rem;
+            overflow: scroll;
             margin-top: auto;
-
-
-            .overview-text {
-                height: 40%;
-                overflow: scroll;
-            }
         }
     }
 }
