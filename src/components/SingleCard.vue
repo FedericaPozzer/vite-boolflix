@@ -1,3 +1,11 @@
+
+
+
+
+<!-- TODO: TRY TO DO JUST ONE CARD ------------------------------------>
+
+
+
 <script>
 import { store } from "../data/store"
 
@@ -25,13 +33,16 @@ export default {
 
     },
 
+    props : {
+
+    },
+
 }
 
 </script>
 
 
 <template>
-
     <div class="col p-2 flip-container db" v-for="item in store.foundTitles" v-show="item.title && item.poster_path">
         <div class="flip-card">
 
@@ -42,26 +53,26 @@ export default {
             <div class="info back p-3 text-center d-flex flex-column" v-show="item.media_type == 'movie'">
                 <div class="titolo my-2"> TITOLO: <b class="fs-5">{{ item.title }}</b> </div>
                 <div class="titolo-originale"> TITOLO ORIGINALE: {{ item.original_title }} </div>
-                
+
                 <!-- flag -->
                 <!-- <div class="lingua"> LINGUA: {{ item.original_language }} </div> -->
-                <div class="flag my-3"> 
+                <div class="flag my-3">
                     <!-- TODO: not working, so.. -->
                     <img :src="getFlag(item.original_language)" alt="">
-                        <!-- TODO: habemus backup flags! -->
+                    <!-- TODO: habemus backup flags! -->
                     <div class="backup-flag">
                         <img :src="backupFlag(item.original_language)" alt="backup-flag">
                     </div>
                 </div>
-                
+
                 <!-- stars -->
                 <div class="d-flex justify-content-center mb-4">
                     <div v-for="numero in 5" :key="numero">
-                        <font-awesome-icon v-if="numero <= transformVote(item.vote_average)" icon="fa-solid fa-star"/>
-                        <font-awesome-icon v-if="numero > transformVote(item.vote_average)" icon="fa-regular fa-star"/>
+                        <font-awesome-icon v-if="numero <= transformVote(item.vote_average)" icon="fa-solid fa-star" />
+                        <font-awesome-icon v-if="numero > transformVote(item.vote_average)" icon="fa-regular fa-star" />
                     </div>
                 </div>
-                
+
                 <!-- overview -->
                 <div class="overview">
                     <div> {{ item.overview }} </div>
@@ -71,7 +82,6 @@ export default {
 
         </div>
     </div>
-
 </template>
 
 
@@ -94,7 +104,7 @@ export default {
             height: 29rem;
             border: $border-white;
         }
-    }   
+    }
 
     .info {
         background-color: rgb(23, 22, 22);
@@ -103,13 +113,15 @@ export default {
         border: $border-white;
 
         .backup-flag img {
-           width: 70px;
+            width: 70px;
         }
-       
+
+
         .overview {
+            height: 7rem;
             overflow: scroll;
+            margin-top: auto;
         }
     }
 }
-
 </style>

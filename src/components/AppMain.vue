@@ -18,7 +18,7 @@ export default {
         <div class="container-fluid">
             <h3>MOVIES</h3>
 
-                <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+                <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
 
                     <SingleCardMovies></SingleCardMovies>
                 
@@ -29,7 +29,7 @@ export default {
         <div class="container-fluid mt-5">
             <h3>TV SERIES</h3>
 
-                <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+                <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
 
                     <SingleCardSeries></SingleCardSeries>
                 
